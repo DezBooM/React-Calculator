@@ -149,9 +149,9 @@ function App() {
   }
 
   return (
-    <div className={`select-none flex justify-center items-center h-screen w-full ${theme.background}`}>
+    <div className={`font-ibm select-none flex justify-center items-center h-screen w-full ${theme.background}`}>
       <div className={`flex flex-col items-center text-2xl ${theme.text}`}>
-        <div className={`overflow-hidden text-bold text-5xl flex justify-end border-2 ${theme.border}  bg-black ${theme.input} opacity-80 rounded-t-lg items-center w-80 px-7 h-20`}>
+        <div className={`overflow-hidden text-bold text-4xl flex justify-end border-2 ${theme.border}  bg-black ${theme.input} opacity-80 rounded-t-lg items-center w-80 px-6 h-20`}>
           {input !== "" || input === "0" ? 
           <NumericFormat 
             value={input}
