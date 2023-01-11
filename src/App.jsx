@@ -8,7 +8,7 @@ function App() {
   const [currState, setCurrState] = useState("")
   const [total, setTotal] = useState(false)
   const [operator, setOperator] = useState(null)
-  const [theme, setTheme] = useState({
+  const [theme, setTheme] = useState(() => JSON.parse(localStorage.getItem("themes")) || {
     background: "bg-red-900",
     text: "text-gray-200",
     input: "text-gray-200",
@@ -83,6 +83,10 @@ function App() {
   useEffect(() => {
     setInput("0")
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem("themes", JSON.stringify(theme))
+  }, [theme])
 
   const addNumbers = e => {
     if(currState.includes(".") && e.target.innerText === ".") return
